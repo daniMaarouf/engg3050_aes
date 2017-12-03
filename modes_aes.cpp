@@ -151,7 +151,7 @@ void aes_ofb_256(const ap_uint<AES_W> in[AES_N], ap_uint<AES_W> out[AES_N], cons
 
 	aes_ofb_label1: for (int i = 0; i < AES_N; i += 2)
 	{
-		#pragma HLS PIPELINE
+#pragma HLS PIPELINE
 		ap_uint<128> iv_new;
 		AES_Encrypt(current_iv, iv_new, expanded_key);
 		current_iv = iv_new;
