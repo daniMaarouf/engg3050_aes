@@ -315,7 +315,7 @@ void aes_encrypt(const unsigned char * in, unsigned char * out, int num_bytes,
 
 }
 
-bool data_matches(unsigned long long * d1, unsigned long long * d2, int num)
+bool data_matches(const unsigned long long * d1, const unsigned long long * d2, int num)
 {
 	assert(d1 != NULL && d2 != NULL && num > 0);
 	for (int i = 0; i < num; i++) {
