@@ -110,6 +110,7 @@ void aes_ctr_256_hp(const ap_uint<AES_W> in1[AES_N], const ap_uint<AES_W> in2[AE
 	ctr_init = ctr_init + 2 * AES_N;
 
 	aes_ctr_label1: for (int i = 0; i < AES_N; i += 2, ctr1++, ctr2++, ctr3++, ctr4++) {
+#pragma HLS ALLOCATION instances=AES_Encrypt limit=1 function
 #pragma HLS PIPELINE
 		ap_uint<128> ctr_out_1;
 		AES_Encrypt(reverse_bytes(ctr1), ctr_out_1, expanded_key);
